@@ -1,13 +1,11 @@
 # Sport Dojo Prototype
 
-## Date Created: 09/07/2022
-
 ### Site Design and Implementation by: Ian Youth
 #### Additional credit is to be given to Giovanni Liotta, who created the framework for the website.
 
 #### No part of this website may be reproduced without express permission from Ian Youth and Giovanni Liotta.
 
-(C) 2021, Dojo Science LLC. All Rights Reserved.
+© 2022, Dojo Science LLC. All Rights Reserved.
 
 This is a working prototype of the website for the soccer-focused startup, Sport Dojo. Sport Dojo, along with its corresponding app (currently in development), aims to use the latest advancements in artificial intelligence and machine learning to advise coaches about all aspects of soccer. 
 
