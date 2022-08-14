@@ -1,0 +1,69 @@
+@media (min-width: 1400px) {
+    iframe, #user-video {
+        height: 400px;
+        width: 600px;
+    }
+}
+
+@media (min-width: 992px) {
+    iframe, #user-video {
+        height: 350px;
+        width: 525px;
+    }
+}
+
+@media (max-width: 991.92px) {
+    #pitch-outline {
+        width: 550px;
+        height: 775px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    tbody tr {
+        position: relative;
+        top: 15px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #pitch-outline {
+        width: 432px;
+        height: 648px;
+    }
+}
+
+@media (max-width: 589.98px) {
+    #pitch-outline {
+        width: 350px;
+        height: 525px;
+    }
+}
+
+@media (max-width: 576px) {
+    #results-container {
+        height: 150px;
+    }
+    iframe, #user-video {
+        height: 200px;
+    }
+}
+
+@media (max-width: 399.98px) {
+    #pitch-outline {
+        width: 240px;
+        height: 360px;
+    }
+    iframe, #user-video {
+        height: 150px;
+    }
+}
+
+@media (max-width: 375.98px) {
+    thead,
+    tbody tr {
+        font-size: 0.6em;
+    }
+    #upload-from-youtube-button, #upload-from-desktop-button {
+        font-size: 8px;
+    }
+}

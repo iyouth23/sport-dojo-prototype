@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Sport Dojo's Event Tagger allows you to completely reenact and analyze the most critical moments of your soccer match. Examine your own games or explore online matches to bring your training to the next level.">
+    <meta name="og:description" content="Reenact and analyze the most critical moments of your soccer matches - or those of the pros!">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="shortcut icon" type="image/png" href="img/favico.ico">
+
+    <!-- Place favicon.ico in the root directory -->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+    <title>Soccer Event Tagger</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+
+            <div id="header">
+                <a href="../index.html"><img id="header-logo" src="img/logo_white.png" alt="Sport Dojo Logo"></a>
+                <span id="description-header">
+                        Sport Dojo Event Tagger
+                    </span>
+                <span id="description-subheader">
+                        Adapted from <a href="https://www.fcpython.com">FC Python</a> 
+                        Mobile Event Tagger
+                    </span>
+            </div>
+
+            <div id="about-the-event-tagger">
+                <p>
+                    Analyze famous soccer matches and moments with Sport Dojo's Event Tagger. Simply <span class="emphasis-text">
+                        upload a video of your choice</span>, <span class="emphasis-text">
+                            play through the video at your own pace</span>, and <span class="emphasis-text">
+                            record key events on the interactive green pitch by clicking and/or dragging your 
+                            mouse</span>. 
+                    Edit players and game times as you go. Once you've finished, save your analysis by clicking 
+                    <span class="emphasis-text">Export to CSV</span>!
+                </p>
+            </div>
+
+            <div id="pitch-outline" class="col-lg-6">
+                <div id="pitch">
+                    <div id="line-container">
+                        <div class="top-box line"></div>
+                        <div class="centre-circle line"></div>
+                        <div class="centre-line line"></div>
+                        <div class="bottom-box line"></div>
+                    </div>
+                    <canvas id="editable-pitch" class="line" onmousedown="addEvent(event)"></canvas>
+                </div>
+            </div>
+
+            <div id="assets-container" class="col-lg-6">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div id="video-container">
+                            <p>
+                                Upload Video
+                            </p>
+                            <p id="video-type-selection-area">
+
+                                <video id="user-video" controls>
+                                    <source id="supported-source" type="video/mp4">
+                                </video>
+                                <iframe id="analysis-video" src="https://youtube.com/embed/rxslQS6KTS4"></iframe>
+                                
+                                <span id="video-type-options" class="justify-content-between">
+                                    <input id="upload-from-youtube-button" type="button" value="Upload from YouTube"/>
+                                        
+                                    <span id="paste-from-youtube-section">
+                                        <input id="paste-from-youtube-form" type="text" placeholder="Paste URL...">
+                                        <input id="paste-from-youtube-submit" type="submit" value="Enter">
+                                    </span>
+
+                                    <span style="display: block">OR</span>
+                                    <input id="upload-from-desktop-button" type="button" value="Upload from Desktop" onclick="document.getElementById('hidden-desktop-button').click()"/>
+                                    <input id="hidden-desktop-button" type="file" name="file" style="display:none" onchange="uploadVideo(this)"/>
+                                </span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div id="results-container" class="col-sm-7">
+                            <table id="results-table">
+                                <thead>
+                                    <tr>
+                                        <th id="player-header" style="width: 35%">Player</th>
+                                        <th style="width: 25%">Event</th>
+                                        <th style="width: 10%">X</th>
+                                        <th style="width: 10%">Y</th>
+                                        <th id="time-header" style="width: 20%">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="results-data"></tbody>
+                            </table>
+                        </div>
+
+                        <div id="events-container" class="col-sm-5">
+                            <p id="event-type">
+                                Select Event
+                            </p>
+                            <p id="selected-event" class="event" onclick="changeEventFocus(this)" contenteditable="false">
+                                Shot
+                            </p>
+                            <p class="event" onclick="changeEventFocus(this)" contenteditable="false">
+                                Goal
+                            </p>
+                            <p class="event" onclick="changeEventFocus(this)" contenteditable="false">
+                                Assist
+                            </p>
+                            <p class="event" onclick="changeEventFocus(this)" contenteditable="false">
+                                Key Moment
+                            </p>
+                            <p class="event" onclick="changeEventFocus(this)" contenteditable="false">
+                                Tackle
+                            </p>
+                            <p class="event" onclick="changeEventFocus(this)" contenteditable="false">
+                                Cross
+                            </p>
+
+                            <h4 id="edit-header" onclick="makeEventsEditable()">
+                                <span id="edit-status">Edit Events</span>
+                            </h4>
+
+                            <p id="button-container">
+                                <button id="export" onclick="exportTableToCSV('Events.csv')">
+                                        Export CSV
+                                    </button>
+                                <button id="del-last" onclick="deleteLastEvent()">
+                                        Delete Last
+                                    </button>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="container">
+        <div class="footer-content">
+            <p class="copyright-text">&copy; 2021 Dojo Science, LLC. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        window.ga = function() {
+            ga.q.push(arguments)
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', 'UA-x-y', 'auto');
+        ga('set', 'transport', 'beacon');
+        ga('send', 'pageview')
+    </script>
+
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

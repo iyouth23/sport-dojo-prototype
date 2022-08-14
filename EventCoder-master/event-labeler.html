@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Sport Dojo's Event Labeler allows you to conduct a play-by-play rendition of your matches. Use our interactive canvas to highlight critical moments; afterwards, replay the game with highlights.">
+    <meta name="og:description" content="Conduct a play-by-play rendition of your matches while highlighting the most critical moments with Sport Dojo's interactive Event Labeler.">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="stylesheet" href="css/event-labeler.css">
+
+    <link rel="stylesheet" href="css/responsive-event-labeler.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="shortcut icon" type="image/png" href="img/favico.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+    <title>Soccer Event Labeler</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-between">
+
+            <div id="header">
+                <a href="../index.html"><img id="header-logo" src="img/logo_white.png" alt="Sport Dojo Logo"></a>
+                <span id="description-header">
+                    Sport Dojo Event Labeler
+                </span>
+            </div>
+
+            <div id="about-the-event-labeler">
+                <p>
+                    Play through soccer matches in real time with Sport Dojo's Event Labeler. Simply <span
+                        class="emphasis-text">
+                        upload a video of your choice</span>, <span class="emphasis-text">
+                        play through the video at your own pace</span>, and <span class="emphasis-text">
+                        activate the Canvas as necessary to highlight critical moments of a game</span>.
+                </p>
+            </div>
+
+            <div id="instructions">
+                <div class="row">
+                    <div id="youtube-instructions" class="col-lg-6">
+                        <button id="display-youtube-instructions-button" class="canvas-control-button">Display YouTube Instructions</button>
+                        <div id="youtube-instructions-list">
+                            <ul>
+                                <li>Click <span class="emphasis-text">Upload from YouTube</span> below and 
+                                paste the relevant URL or video ID to populate the video area.</li>
+                                <li>Play through the video. When you've encountered a critical moment,
+                                    click <span class="emphasis-text">Activate Canvas</span> to pause the 
+                                    video.
+                                </li>
+                                <li>You may need to click <span class="emphasis-text">Deactivate Canvas</span>
+                                and then click <span class="emphasis-text">Activate Canvas</span> again to 
+                                remove the "More Videos" pop-up.</li>
+                                <li>Once you have done so, you may draw in the video area <span class="emphasis-text">highlight particular aspects</span>
+                                    of a match!
+                                </li>
+                                <li>Click <span class="emphasis-text">Deactivate Canvas</span> and continue playing through 
+                                the video. <span class="emphasis-text">Activate the canvas again</span> as necessary.</li>
+                            </ul>
+                            <button id="hide-youtube-instructions-button" class="canvas-control-button">Hide Instructions</button>
+                        </div>
+                    </div>
+                    <div id="desktop-instructions" class="col-lg-6">
+                        <button id="display-desktop-instructions-button" class="canvas-control-button">Click for Desktop Instructions</button>
+                        <div id="desktop-instructions-list">
+                            <ul>
+                                <li>
+                                    Click <span class="emphasis-text">Upload from Desktop</span> below to
+                                    add the relevant video to the page.
+                                </li>
+                                <li>
+                                    Play through the video. When you've encountered a critical moment, click
+                                    <span class="emphasis-text">Activate Canvas</span> to pause the video.
+                                </li>
+                                <li>
+                                    Draw in the video area as necessary to highlight particular aspects
+                                    of a match.
+                                </li>
+                                <li>
+                                    To store your drawing, click <span class="emphasis-text">Save Drawing</span>.
+                                    This will store your changes to enable them
+                                    to be redisplayed upon restarting the video.
+                                </li>
+                                <li>
+                                    Click <span class="emphasis-text">Deactivate Canvas</span> and continue
+                                    playing through the video. <span class="emphasis-text">Activate the Canvas again</span>
+                                    as necessary, opting whether to <span class="emphasis-text">save your drawings</span> each time.
+                                </li>
+                                <li>
+                                    Once you have saved your relevant annotations, click <span class="emphasis-text">Replay with Drawings</span>
+                                    to replay the video. The video will pause and display your saved drawings at their 
+                                    corresponding times. Click <span class="emphasis-text">Step</span> to step through the 
+                                    video.
+                                </li>
+                                <li>
+                                    Click <span class="emphasis-text">Exit Replay Mode</span> to
+                                    return to normal viewing.
+                                </li>
+                            </ul>
+                            <button id="hide-desktop-instructions-button" class="canvas-control-button">Hide Instructions</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="videos">
+                <div id="analysis-video"></div>
+                <video id="user-video" controls>
+                    <source id="supported-source" type="video/mp4" src="">
+                </video>
+                <canvas id="canvas"></canvas>
+            </div>
+
+            <div class="button-div col-md-5">
+                <p id="video-type-selection-area">
+                    Select Media Source
+                    <span id="video-type-options" class="justify-content-between">
+                        <input id="upload-from-youtube-button" type="button" value="Upload from YouTube" />
+
+                        <span id="paste-from-youtube-section">
+                            <input id="paste-from-youtube-form" type="text" placeholder="Paste URL...">
+                            <input id="paste-from-youtube-submit" type="submit" value="Enter">
+                        </span>
+
+                        <span id="or" style="display: block">OR</span>
+                        <input id="upload-from-desktop-button" type="button" value="Upload from Desktop"
+                            onclick="document.getElementById('hidden-desktop-button').click()" />
+                        <input id="hidden-desktop-button" type="file" name="file" style="display:none"
+                            onchange="uploadDesktopVideoAndDisplayAdditionalOptions(this)" />
+                    </span>
+                </p>
+            </div>
+            <div class="button-div col-md-5">
+                <p>
+                    Controls
+                    <button class="canvas-control-button" id="activate-canvas-button">Activate Canvas</button>
+                    <button class="canvas-control-button" id="deactivate-canvas-button">Deactivate Canvas</button>
+                    <button class="canvas-control-button desktop-button" id="save-drawing-button">Save Drawing</button>
+                    <button class="canvas-control-button desktop-button" id="replay-with-drawings-button">Replay With
+                        Drawings</button>
+                    <button class="canvas-control-button desktop-button" id="step-button">Step</button>
+                    <button class="canvas-control-button desktop-button" id="exit-replay-mode-button">Exit Replay Mode</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="container">
+        <div class="footer-content">
+            <p class="copyright-text">&copy; 2021 Dojo Science, LLC. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        window.ga = function () {
+            ga.q.push(arguments)
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', 'UA-x-y', 'auto');
+        ga('set', 'transport', 'beacon');
+        ga('send', 'pageview')
+    </script>
+
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/event-labeler.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+
+</body>
+
+</html>

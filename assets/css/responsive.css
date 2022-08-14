@@ -1,0 +1,226 @@
+/* Normal desktop :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) {
+
+
+}
+
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+
+}
+
+ 
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .site-logo {
+        margin-right: 30px;
+    }
+    .main-menu li:not(:last-child) {
+        margin-right: 40px;
+    }
+    .header-area {
+        padding: 10px 15px;
+    }
+
+    .subpage-fullpage {
+        margin-top: 25px;
+    }
+    #new-revolution-text{
+        padding-top: 100px;
+    }
+    #the-coaches-library {
+        padding-top: 40px;
+    }
+    #explore-the-platform-button {
+        margin-bottom: 100px;
+    }
+    #database-button {
+        margin-bottom: 45px;
+    }
+    #dojo-science-button {
+        margin-bottom: 45px;
+    }
+    #coaches-library-button {
+        margin-bottom: 45px;
+    }
+    #event-tagger-button {
+        margin-bottom: 45px;
+    }
+    #event-labeler-button {
+        margin-bottom: 45px;
+    }
+    #about-us-contact-button {
+        margin-bottom: 45px;
+    }
+
+    .login-register-link li a {
+        padding: 6px 22px;
+        width: 118px;
+    }
+    .section-cmn-content-wrap.banner-text {
+        margin-bottom: 30px;
+    }
+    .banner-area {
+        background: none !important;
+    }
+
+    .section-image img {
+        margin-bottom: 50px;
+    }
+
+    .content-div {
+        display: table;
+    }
+    .content-div-image {
+        display: table-footer-group;
+    }
+    .content-div-text {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        display: table-header-group;
+        border: 1px solid red;
+    }
+    .description {
+        margin-bottom: 45px;
+    }
+
+    .section.twin-area {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+    .section.twin-area, .section.footer-area {
+        height: auto !important;
+        padding-top: 45px;
+    }
+    .footer-content-wrapper {
+        padding: 30px 0;
+        padding-top: 45px;
+    }
+    .fp-tableCell {
+        height: auto !important;
+    }
+}
+
+ 
+/* small mobile :320px. */
+@media (min-width: 320px) and (max-width: 767.98px) {
+    .site-logo {
+        margin-right: 0;
+        max-width: 100px;
+    }
+    .main-menu li:not(:last-child) {
+        margin-right: 40px;
+    }
+    .header-area {
+        padding: 15px 15px;
+    }
+
+    .subpage-fullpage {
+        margin-top: 25px;
+    }
+    #new-revolution-text {
+        padding-top: 100px;
+    }
+    #the-coaches-library {
+        padding-top: 40px;
+    }
+    #explore-the-platform-button {
+        margin-bottom: 100px;
+    }
+    #database-button {
+        margin-bottom: 45px;
+    }
+    #dojo-science-button {
+        margin-bottom: 45px;
+    }
+    #coaches-library-button {
+        margin-bottom: 45px;
+    }
+    #event-tagger-button {
+        margin-bottom: 45px;
+    }
+    #event-labeler-button {
+        margin-bottom: 45px;
+    }
+    #about-us-contact-button {
+        margin-bottom: 45px;
+    }
+    .box-btn {
+        text-align: center;
+    }
+
+    .content-div {
+        display: table;
+    }
+    .content-div-image {
+        display: table-footer-group;
+    }
+    .content-div-text {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        display: table-header-group;
+    }
+    .description {
+        margin-bottom: 45px;
+    }
+    
+    .login-register-link li a {
+        padding: 6px 22px;
+        width: 118px;
+    }
+    .section-cmn-content-wrap.banner-text {
+        margin-bottom: 30px;
+    }
+    .banner-area {
+        background: none !important;
+    }
+    .section.twin-area {
+        padding-top: 45px;
+        padding-bottom: 15px;
+        height: auto !important;
+    }
+    .video-transparent-content h1 {
+        font-size: 28px;
+    }
+    .video-transparent-content h2 {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+    .video-transparent-content a.box-btn {
+        line-height: 1.3;
+    }
+    .fp-tableCell {
+        height: auto !important;
+    }
+    .section.twin-area, .section.footer-area {
+        padding-top: 45px;
+        height: auto !important;
+    }
+
+    .section-image img {
+        margin-bottom: 50px;
+    }
+
+    .footer-content-wrapper {
+        padding: 30px 0;
+        padding-top: 45px;
+    }
+ 
+}
+ 
+/* Large Mobile :480px. */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+
+ 
+}
+
+/* Small mobile only */
+@media (min-width: 320px) and (max-width: 575.98px) {
+    .twin-area {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
