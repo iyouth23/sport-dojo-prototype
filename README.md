@@ -22,4 +22,6 @@ Within the Resources page, there are two widgets:
 
 * The Event Labeler. This widgets allows one to play through a soccer match after uploading a video from YouTube or one's Desktop. The video can then be replayed with user annotations.
 
-Note that because this website has no login or registration implemented, the corresponding buttons will simply redirect you to a form to obtain more information about the startup.
+Note that because this website has no login or registration implemented, the corresponding buttons will simply redirect the user to a form to obtain more information about the startup.
+
+For inquiries, please email Ian Youth (iyouth66@gmail.com). Thank you.
