@@ -7,7 +7,7 @@
 
 © 2022, Dojo Science LLC. All Rights Reserved.
 
-This is a working prototype of the website for the soccer-focused startup, Sport Dojo. Sport Dojo, along with its corresponding app (currently in development), aims to use the latest advancements in artificial intelligence and machine learning to advise coaches about all aspects of soccer. 
+This is a working prototype of the website for Sport Dojo, a soccer-focused startup based in St. Louis, Missouri. Sport Dojo, along with its corresponding app (currently in development), aims to use the latest advancements in artificial intelligence and machine learning to advise coaches about all aspects of soccer. 
 
 This website has multiple features:
 
